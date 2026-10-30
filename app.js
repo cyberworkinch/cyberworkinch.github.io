@@ -23,31 +23,11 @@ function escapeHtml(value) {
 }
 function pdfHref(page) { return `support.pdf#page=${encodeURIComponent(page)}`; }
 function computeScore(p, terms) {
-  if (!terms.every(t => p.folded.includes(t))) return -1;
-  let score = 0;
-  const title=fold(p.topic);
-  for(const term of terms) {
-    score += (p.folded.match(new RegExp(escapeRegExp(term),'g')) || []).length;
-    if(title.includes(term)) score += 20;
-    if(p.folded.slice(0, 600).includes(term)) score += 3;
-  }
-  // Favor pages where searched terms are near one another.
-  if(terms.length > 1) {
-    let span=Infinity;
-    const occurrences=[];
-    for(const t of terms){ let i=p.folded.indexOf(t); while(i !== -1){occurrences.push([i,t]);i=p.folded.indexOf(t,i+1);if(occurrences.length>700)break;} }
-    occurrences.sort((a,b)=>a[0]-b[0]);
-    for(let j=0;j<occurrences.length;j++){
-      const seen=new Set();
-      for(let k=j;k<Math.min(occurrences.length,j+30);k++){
-        seen.add(occurrences[k][1]);
-        if(seen.size===terms.length){span=Math.min(span,occurrences[k][0]-occurrences[j][0]);break;}
-      }
-    }
-    if(span < 250) score += 12;
-    else if(span < 600) score += 5;
-  }
-  return score;
+  // Classement purement documentaire. Ne calcule aucune réponse ni ne génère de script.
+  const doc={type:'cours',title:p.precise_title||p.topic||'',sub:p.block,
+    body:p.text.slice(0,250),search:p.text,source:'PDF original'};
+  const score=window.TSSR_SEARCH.rank(doc,input.value);
+  return score>0?score:-1;
 }
 function escapeRegExp(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }
 function highlightSnippet(source,terms) {
@@ -96,15 +76,18 @@ function bestExcerpt(p,terms) {
 }
 function renderIndex() {
   const byBlock={'Bloc 1':[], 'Bloc 2':[]};
-  for(const s of library.sections) byBlock[s.block].push(s);
+  for(const p of library.pages) {
+    // Les titres précis de navigation proviennent du contenu de chaque page, pas du titre du chapitre précédent.
+    byBlock[p.block].push(p);
+  }
   $('num-pages').textContent=library.pages.length;
   $('num-sections').textContent=library.sections.length;
   $('index-groups').innerHTML=Object.entries(byBlock).map(([name,items],idx)=>`
     <article class="index-group">
       <h3>${name==='Bloc 1'?'Fondamentaux et priorités':'Compléments et procédures avancées'}</h3>
-      <p class="sub">${escapeHtml(name)} · ${items.length} rubriques · pages ${idx===0?'3–79':'80–176'}</p>
-      <details><summary>Afficher les ${items.length} rubriques</summary><ol class="section-list">
-        ${items.map(s=>`<li><a href="${pdfHref(s.page)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(s.title)}</span><em>p. ${s.page} ↗</em></a></li>`).join('')}
+      <p class="sub">${escapeHtml(name)} · ${items.length} pages avec un titre précis · pages ${idx===0?'1–79':'80–176'}</p>
+      <details><summary>Afficher les ${items.length} titres précis</summary><ol class="section-list">
+        ${items.map(p=>`<li><a href="${pdfHref(p.page)}" target="_blank" rel="noopener noreferrer"><span>${escapeHtml(p.precise_title || p.topic)}</span><em>p. ${p.page} ↗</em></a></li>`).join('')}
       </ol></details>
     </article>`).join('');
 }
@@ -132,7 +115,7 @@ function drawResults(terms){
   const chunk=matches.slice(shown,upTo);
   const html=chunk.map(({p})=>`<article class="result">
     <div><div class="meta">${escapeHtml(p.block)}<span class="dot">·</span>Page ${p.page}</div>
-      <h3>${escapeHtml(p.topic)}</h3><p class="excerpt">${bestExcerpt(p,terms)}</p></div>
+      <h3>${escapeHtml(p.precise_title || p.topic)}</h3><p class="excerpt">${bestExcerpt(p,terms)}</p></div>
     <a href="${pdfHref(p.page)}" target="_blank" rel="noopener noreferrer" aria-label="Ouvrir la page ${p.page} du PDF">Ouvrir p. ${p.page} ↗</a>
   </article>`).join('');
   if(shown===0)$('results').innerHTML=html||'<div class="empty">Aucun résultat. Essaie un nom de logiciel, une commande ou un autre mot-clé.</div>';

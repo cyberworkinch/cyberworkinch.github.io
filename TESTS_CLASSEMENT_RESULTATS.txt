@@ -1,0 +1,13 @@
+TESTS STATIQUES DU MOTEUR DOCUMENTAIRE — 30/10/2026
+OK | automatiser une tâche avec cron => Cron — Planifier une tâche à 9 h et vérifier son exécution
+OK | définition cron => Cron — Définition simple et explication des cinq champs
+OK | installer cron => Cron — Installer et démarrer le service sur Debian 12 ou 13
+OK | rechercher utilisateur AD => Rechercher un utilisateur AD — try, catch, finally
+OK | GLPI imprimante => GLPI — Résoudre un problème d’imprimante
+OK | FreePBX 17 Debian 12 => FreePBX 17 — Choisir Debian 12 ou l’ISO officielle avant installation
+OK | WDS boot.wim Windows 11 => Windows 11 : éviter le boot.wim d’installation WDS
+OK | script sauvegarde bash => Sauvegarder les dossiers utilisateurs Linux — archive tar.gz
+
+Sources : 176 pages, 18 scripts séparés, 102 fiches.
+Contrôles de syntaxe JavaScript effectués avec Node.js. Aucun moteur d'IA, calculateur ou générateur.
+ATTENTION : ces tests ne constituent ni un test complet sous navigateur sur le réseau d'examen, ni un test d'exécution des scripts PowerShell.

@@ -1,0 +1,35 @@
+﻿Domaine;Contrôle;Statut;Motif
+Sources;PDF de 176 pages présent;VÉRIFIÉ;176 pages dans support.pdf
+Sources;Fichier public anonymisé conservé sans changement dans cette révision;VÉRIFIÉ;Empreinte identique à TSSR_REVISION_176P_ANONYMISE_PUBLIC.pdf
+Sources;REAC TP-01351 millésime 02 utilisé comme référence;VÉRIFIÉ;9 compétences du référentiel 2023 identifiées
+Sources;Couverture exhaustive des 9 compétences à toutes les étapes;PARTIEL;"Nombreux thèmes présents ; exhaustivité des scénarios non garantie"
+Sources;DP et ECF pris en compte dans les compléments;VÉRIFIÉ;Fiches d’approfondissement dédiées
+Sources;9 documents Studi récents retrouvés;VÉRIFIÉ;"9 PDF dans les sources de travail ; non publiés dans le site"
+Sources;Tous les détails des 9 PDF reproduits intégralement;NON DÉMONTRÉ;"Synthèses reformulées de 48+25 fiches ; pas un fac-similé intégral"
+Recherche;Moteur commun sur la page d’accueil;VÉRIFIÉ;Recherche en mémoire sur 560 références
+Recherche;Recherche par mot et expression;VÉRIFIÉ;10 requêtes parcourues dans Chromium
+Recherche;Pertinence optimale pour toutes les expressions possibles;PARTIEL;"20 requêtes logiques, 10 en navigateur ; autres formulations à contrôler"
+Recherche;Lien PDF vers la page demandée;PARTIEL;"Lien #page présent ; comportement à confirmer sur le poste d’examen"
+Recherche;Titres précis pour les 176 pages;VÉRIFIÉ;176 titres spécifiques dans les données indexées
+Contenu;175 fiches documentaires indexées;VÉRIFIÉ;76+26+48+25 fiches
+Contenu;18 scripts conservés séparément;VÉRIFIÉ;Les variantes sont distinctes
+Contenu;Chaque ligne non vide annotée;PARTIEL;"332 lignes annotées ; certaines explications génériques à revoir"
+Contenu;Commentaires distincts du cours;VÉRIFIÉ;Balisage COURS et COMPLÉMENT AJOUTÉ
+Contenu;Champs à personnaliser identifiés partout;PARTIEL;"Nombreuses annotations ; contrôle exhaustif non effectué"
+Contenu;Identifiants par défaut utiles conservés si documentés;PARTIEL;Ne vaut pas validation de tous les mots de passe de version
+Scripts;PowerShell validé en AD réel;NON TESTÉ;13 scripts non exécutés sur une infrastructure AD
+Scripts;Bash syntaxe et logique fiables;PARTIEL;2 syntaxes contrôlées, logique non validée en VM
+Scripts;PHP exécutable sans anomalie;NON;1 exemple commence par 1<?php et doit être corrigé
+Réseaux;10 fichiers Packet Tracer pris en référence;VÉRIFIÉ;"Titres indexés ; les contenus internes ne sont pas analysés"
+Réseaux;Topologies et ACL vérifiées sur Packet Tracer;NON TESTÉ;Tests réels à effectuer
+Compatibilité;Vérification WDS et MDT par documentation récente;PARTIEL;"Limitations officielles répertoriées ; tous les scénarios non testés"
+Compatibilité;GLPI, Debian, PHP, SSH, LAMP par version;PARTIEL;"Fiches présentes ; installations en VM non exécutées"
+Téléchargements;Tous les 77 liens toujours fonctionnels;NON TESTÉ;"Inventaire existant ; vérification URL unitaire non exhaustive"
+Confidentialité;Absence de nom/prénom dans texte PDF indexable;VÉRIFIÉ;Recherche textuelle ciblée : zéro occurrence
+Confidentialité;Absence de données personnelles dans toutes les images;NON DÉMONTRÉ;Contrôle visuel intégral de chaque image non réalisé
+Confidentialité;Commentaires éditoriaux différenciés des cours;VÉRIFIÉ;Mentions de provenance neutres et visibles
+Règles examen;Aucune IA ou calculateur ou générateur automatique dans le site;VÉRIFIÉ;Recherche documentaire uniquement
+Règles examen;Accès sans compte au contenu GitHub Pages;À VÉRIFIER;"Conçu pour site public ; test réel en navigation privée restant"
+Publication;Nom de domaine simple et unique;PARTIEL;"Site racine cyberworkinch.github.io ; raccourci court non créé"
+Publication;Site public à jour avec les derniers fichiers;NON;Nouveau ZIP à importer sur GitHub
+Publication;Droits de diffusion de tous les supports;À VÉRIFIER;Autorisation de consultation ne vaut pas nécessairement autorisation de publication

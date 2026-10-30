@@ -11,7 +11,7 @@ function cp(g){let t=n([g.software,g.title,g.tags].join(' '));if(/freepbx|asteri
 const cpnames=['','Support et tickets','Windows / AD / DNS / GPO','Linux / SSH','Réseaux IP','Virtualisation','Scripts','Sécurité / pare-feu','Sauvegarde','Déploiement'];
 let datasets={
  guides:kb.guides.map(g=>({type:'guides',data:g,header:g.title,body:[g.title,g.software,g.version,g.action,g.summary,g.tags,g.prereq,g.check,g.warning,g.alternatives,...(g.steps||[]).flatMap(s=>[s.text,s.cmd])].join(' ')})),
- pages:kb.pages.map(p=>({type:'pages',data:p,header:(kb.sections.filter(s=>s.page<=p.page).slice(-1)[0]||{}).title||'Cours de révision',body:p.text})),
+ pages:kb.pages.map(p=>({type:'pages',data:p,header:p.precise_title||p.topic||'Cours de révision',body:p.text})),
  diagnostics:kb.diagnostics.map(x=>({type:'diagnostics',data:x,header:x.name,body:[x.name,x.tags,...x.steps.flatMap(s=>[s.phase,s.test,s.next])].join(' ')})),
  commands:kb.commands.map(x=>({type:'commands',data:x,header:x.name,body:[x.name,x.description,x.tags,x.linux,x.ps].join(' ')})),
  ports:kb.ports.map(x=>({type:'ports',data:x,header:x.name,body:[x.name,x.port,x.proto,x.description].join(' ')})),
@@ -43,7 +43,11 @@ function renderCIDR(){let wrap=el('div');add(wrap,'p','Table de correspondance s
 function renderREAC(){let w=el('div');add(w,'p','REAC officiel TP-01351, millésime 02 du 24/05/2023. Les fiches de cette archive sont des aides, pas le texte exhaustif du référentiel.','note');let a=add(w,'div',undefined,'rowlinks');link(a,'Référentiel officiel France compétences',kb.officialReac);cpnames.forEach((x,i)=>{if(!i)return;let c=add(w,'article',undefined,'card');add(c,'h3',`Compétence ${i} — ${x}`);add(c,'p',`Utiliser l’onglet Procédures et chercher les logiciels / situations correspondants. ${kb.guides.filter(g=>cp(g)===i).length} fiches classées dans cette catégorie.`);});return w;}
 function find(){let t=words(query),types=tab==='all'?null:tab,cands=types?(datasets[types]||[]):all;let software=$('#software').value,action=$('#action').value;
  let r=cands.map(x=>{if(x.type==='guides'){if(software&&x.data.software!==software)return null;if(action&&x.data.action!==action)return null;}else if(software||action){return null;}
-  if(!t.length)return {x,score:0};let hit=t.filter(w=>x.norm.includes(w));if(!hit.length)return null;let score=hit.length*12+(hit.length===t.length?24:0)+t.filter(w=>x.titleNorm.includes(w)).length*24;if(n(x.data.version||'').includes(n(query)))score+=8;return {x,score};}).filter(Boolean).sort((a,b)=>b.score-a.score);return r;
+  if(!t.length)return {x,score:0};
+  let d=x.data;let doc={type:x.type==='pages'?'cours':x.type==='ports'?'port':x.type==='resources'?'resources':x.type==='guides'?'guides':x.type,
+   title:x.header,sub:[d.version||'',d.software||'',d.action||''].join(' '),tags:d.tags||'',body:(d.summary||d.description||x.body).slice(0,400),search:x.body,source:d.source||'',action:d.action||'',kind:x.type==='resources'?'resource':''};
+  let score=window.TSSR_SEARCH.rank(doc,query);if(score<=0)return null;
+  return {x,score};}).filter(Boolean).sort((a,b)=>b.score-a.score);return r;
 }
 function render(){let out=$('#results');out.replaceChildren();$('#more').hidden=true;$('#modeText').textContent=tab==='all'?'Tous les types':({guides:'Fiches de procédures',pages:'Pages du PDF',diagnostics:'Diagnostics',commands:'Commandes',ports:'Ports',compat:'Compatibilités',resources:'Liens éditeurs',cidr:'Table fixe',reac:'Référentiel'})[tab];
  if(tab==='cidr'){out.append(renderCIDR());$('#title').textContent='Table IPv4 / CIDR';$('#subtitle').textContent='Lecture, sans calcul automatique';return;}

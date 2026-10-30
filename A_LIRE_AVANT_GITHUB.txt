@@ -1,0 +1,13 @@
+BIBLIOTHÈQUE TSSR — CLASSEMENT DOCUMENTAIRE 30/10/2026
+
+1. Les deux bibliothèques sont désormais consultables depuis la page d’accueil du site : https://cyberworkinch.github.io/
+2. « 176 pages » ouvre le PDF d’origine et l’index du cours.
+3. « Bibliothèque enrichie » affiche la recherche commune et les approfondissements.
+4. Les commentaires ajoutés sont marqués OR; les extraits du cours sont marqués BLEU.
+5. Les scripts de source sont conservés, jamais modifiés ni générés à partir d’une consigne. Leurs anomalies sont signalées; absence de test Windows/Packet Tracer.
+6. Site sans compte pour la consultation. AUCUN moteur IA, calculateur IPv4, générateur Cron, VLAN, script ou ACL.
+7. URL courte : GitHub ne permet pas de réduire cyberworkinch.github.io sans domaine externe. Un raccourci is.gd doit être créé et testé manuellement; aucune adresse courte n’est déjà réservée.
+8. AVANT publication : vérifier les droits de diffusion (supports Studi), les informations personnelles et les secrets; les identifiants par défaut DOCUMENTÉS sont conservés, sans mots de passe personnels.
+9. Une bonne recherche renvoie une fiche documentée, pas forcément une procédure testée en conditions réelles.
+
+Test conseillé en navigation privée : https://cyberworkinch.github.io/ — cherche « automatiser une tâche avec cron ».

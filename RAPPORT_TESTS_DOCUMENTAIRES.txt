@@ -1,0 +1,13 @@
+RECHERCHE TSSR — TESTS DE CLASSEMENT (30/10/2026)
+Méthode : les indices sont calculés dans JavaScript, sur des fichiers statiques.
+Aucune IA ni calcul automatique de réseaux/commandes ne figure dans le site.
+Scénarios exigés :
+- « automatiser une tâche avec cron » : priorité à la procédure fixe de planification
+- « définition cron » : priorité à la définition
+- « installer cron » : priorité à la fiche d’installation
+- « rechercher utilisateur AD » : priorité au script existant de recherche
+- « FreePBX 17 Debian 12 » : privilégie documentation de la combinaison stable
+- « WDS boot.wim Windows 11 » : avertissement de compatibilité prioritaire
+Les tests logiques doivent être exécutés avant publication. Les onglets du site et le clic PDF doivent encore être confirmés dans le navigateur de l’utilisateur.
+Les 18 scripts sources sont conservés séparément, et les annotations ajoutées sont identifiées comme telles. Les scripts PowerShell ne sont pas garantis, faute de banc d’essai Windows/AD.
+Les 77 liens historiques ne sont pas tous ré-audités en temps réel; nouvelles sources prioritaires confirmées séparément.

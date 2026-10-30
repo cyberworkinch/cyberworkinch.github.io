@@ -1,0 +1,14 @@
+Tests réalisés le 30 octobre 2026
+
+Contrôle syntaxique JavaScript : OK
+Chargement des pages HTML dans Chromium par injection mémoire (navigations localhost et file interdites dans cet environnement) : OK
+Filtre « Nouveaux cours Studi 2026 » : 48 fiches trouvées
+Recherche « installer GLPI 10 Debian 12 » : GLPI 10 — Installer Apache, MariaDB et PHP 8.2
+Recherche « ssh clé ed25519 » : SSH — Créer une clé Ed25519 et la protéger
+Recherche « restaurer rsync » : Rsync — Restaurer une sauvegarde dans un dossier de test
+Recherche « formulaire formcreator » : GLPI 10 / Formcreator — Créer un formulaire de demande
+Recherche « durcir Debian ufw » : Debian — Autoriser SSH dans UFW avant d’activer le pare-feu
+Recherche « installer LAMP php8.4 » : LAMP Debian 13 — Installer Apache, MariaDB et PHP 8.4
+Fiche et commentaires accessibles, sans erreur JS détectée.
+
+NON TESTÉ : exécution des procédures en VM Debian et GLPI ; authentification réelle, réseau du centre, disponibilité future des URL et production sur GitHub.

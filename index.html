@@ -1,75 +1,9 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex,nofollow,noarchive,nosnippet">
-  <meta name="referrer" content="no-referrer">
-  <meta name="theme-color" content="#0b1528">
-  <title>Répertoire technique</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="shell">
-    <header class="site-header">
-      <a class="brand" href="./" aria-label="Accueil">
-        <span class="mark" aria-hidden="true">◫</span>
-        <span>Répertoire technique</span>
-      </a>
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap"><a href="bibliotheque.html" style="color:#11568f;font-weight:900;text-decoration:none;margin-right:14px">Bibliothèque enrichie →</a><a href="archives.html" style="color:#1d4f91;font-weight:800;text-decoration:none">Archives techniques complètes ↗</a><span class="top-tag">Accès direct · Sans compte</span></div>
-    </header>
-    <main>
-      <section class="intro" aria-label="Recherche documentaire">
-        <p class="eyebrow">DOCUMENTATION INDEXÉE</p>
-        <h1>Une notion. Sa page.<br><span>En quelques secondes.</span></h1>
-        <p class="subtitle">Recherche dans l’intégralité du support, avec accès direct à la page correspondante. Les mots-clés sont recherchés sur cet appareil, sans compte ni serveur de recherche.</p>
-        <form id="search-form" class="search-form" role="search">
-          <label class="sr-only" for="q">Rechercher dans le dossier</label>
-          <span class="search-icon" aria-hidden="true">⌕</span>
-          <input id="q" type="search" autocomplete="off" placeholder="Ex. : configuration DHCP, FreePBX, sauvegarde…" spellcheck="false">
-          <button type="submit" class="search-button">Rechercher</button>
-        </form>
-        <div class="search-help"><span>Tape une notion, une commande ou le nom d’un logiciel.</span><kbd>/</kbd><span>pour rechercher</span></div>
-        <div id="shortcuts" class="shortcuts" aria-label="Recherches rapides">
-          <button type="button" data-query="DHCP">DHCP</button>
-          <button type="button" data-query="DNS">DNS</button>
-          <button type="button" data-query="Active Directory">Active Directory</button>
-          <button type="button" data-query="VLAN">VLAN</button>
-          <button type="button" data-query="GLPI">GLPI</button>
-          <button type="button" data-query="FreePBX">FreePBX</button>
-          <button type="button" data-query="sauvegarde">Sauvegarde</button>
-          <button type="button" data-query="PowerShell">PowerShell</button>
-          <button type="button" data-query="SSH">SSH</button>
-        </div>
-      </section>
-      <section class="stats" aria-label="Contenu indexé">
-        <div><strong id="num-pages">176</strong><span>pages</span></div>
-        <div><strong id="num-sections">85</strong><span>rubriques</span></div>
-        <div><strong>100 %</strong><span>accessible sans connexion au compte</span></div>
-        <a class="pdf-link" href="support.pdf" target="_blank" rel="noopener noreferrer">Consulter le dossier complet <span aria-hidden="true">↗</span></a>
-      </section>
-      <section id="results-section" class="results-section" aria-live="polite" hidden>
-        <div class="results-header">
-          <div><p class="eyebrow">RÉSULTATS</p><h2 id="results-title">Résultats de recherche</h2></div>
-          <div class="filters" role="group" aria-label="Filtrer par bloc">
-            <button type="button" class="active" data-filter="all" aria-pressed="true">Tous</button>
-            <button type="button" data-filter="Bloc 1" aria-pressed="false">Bloc 1</button>
-            <button type="button" data-filter="Bloc 2" aria-pressed="false">Bloc 2</button>
-          </div>
-        </div>
-        <div id="results" class="results"></div>
-        <button type="button" id="show-more" class="show-more" hidden>Afficher davantage de résultats</button>
-      </section>
-      <section class="index-section" aria-labelledby="index-title">
-        <div class="index-heading"><div><p class="eyebrow">NAVIGATION</p><h2 id="index-title">Sommaire du dossier</h2></div><span id="load-state" class="status">Chargement de l’index…</span></div>
-        <p class="index-desc">Chaque rubrique mène directement à la page prévue dans le sommaire d’origine.</p>
-        <div id="index-groups" class="index-groups"></div>
-      </section>
-      <section class="note"><strong>Astuce :</strong> le résultat de recherche indique la page exacte du document et un extrait du passage retrouvé. Sur certains navigateurs, l’ouverture du PDF à la page demandée peut dépendre du lecteur PDF installé.</section>
-    </main>
-    <footer>Bibliothèque documentaire · Consultation libre · Sans compte de lecture</footer>
-  </div>
-  <script src="index-data.js"></script>
-  <script src="app.js" defer></script>
-</body>
-</html>
+<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive,nosnippet"><meta name="referrer" content="no-referrer"><title>Répertoire technique — Cours et approfondissements</title><link rel="stylesheet" href="bibliotheque.css"></head><body>
+<header class="top"><a class="identity" href="./"><span class="logo">▣</span> Répertoire technique</a><nav><a href="cours.html">176 pages</a><a href="archives.html">Anciennes archives</a><a class="here" href="./">Bibliothèque enrichie</a></nav><span class="chip lock">Lecture sans compte</span></header>
+<main><section class="hero"><div class="kicker">TSSR · Référentiel 2023 · DOCUMENTATION UNIQUEMENT</div><h1>Un mot, la bonne fiche.<br><em>Cours + approfondissements.</em></h1><p>Le cours original de 176 pages, les approfondissements, 77 exercices fixes issus des supports ou reformulés pour entraînement, les scripts expliqués et les cas du dossier professionnel. Chaque résultat mène à sa source. <strong>Recherche documentaire uniquement. Aucun calculateur, aucun script généré, aucune IA.</strong></p><form id="searchform" role="search"><label for="search" class="sr">Rechercher</label><span class="glass">⌕</span><input id="search" type="search" placeholder="Ex. : automatiser une tâche avec cron / définir ACL / installer WDS" autocomplete="off" spellcheck="false"><button type="submit">Rechercher</button></form><div class="examples" id="quick"><button data-q="automatiser une tâche avec cron">Planifier Cron</button><button data-q="definition cron">Définition Cron</button><button data-q="installer cron">Installer Cron</button><button data-q="rechercher utilisateur AD">Utilisateur AD</button><button data-q="script sauvegarde bash">Sauvegarde Bash</button><button data-q="install.esd install.wim">ESD → WIM</button><button data-q="VLAN routeur 2911">VLAN</button><button data-q="wiki.js ldap">Wiki.js LDAP</button><button data-q="GLPI 10 Debian 12">GLPI 10</button><button data-q="SSH sécuriser Debian">SSH sécurisé</button><button data-q="installer LAMP Debian 13">LAMP récent</button><button data-q="restaurer rsync">Rsync restaurer</button><button data-q="rsync sauvegarde distante ssh">Rsync distant</button><button data-q="cron code erreur 23">Rsync diagnostic</button><button data-q="FreePBX Debian">FreePBX</button><button data-q="172.23.0.0 2 sous reseaux">Exercice IPv4</button><button data-q="switch 4 pc 2 vlan">Exercice VLAN</button><button data-q="import CSV OU AD">Exercice PowerShell CSV</button><button data-q="exercices corrigés">Tous les exercices</button></div><div class="statbar" id="statbar"></div></section>
+<div class="provenance-legend"><b class="course">BLEU — COURS ORIGINAL</b> Texte issu des 176 pages. <b class="added">OR — COMMENTAIRE AJOUTÉ</b> Explication ou approfondissement distinct du cours. <b class="added">À RENSEIGNER</b> L’endroit précis où saisir ta valeur (e-mail, mot de passe, IP, domaine ou chemin). Les valeurs par défaut documentées restent affichées, sans publication de secrets personnels.</div><div class="notice"><strong>Règle de l’épreuve :</strong> site documentaire uniquement. Les exemples de scripts ont été préparés à l’avance ; le site ne les adapte pas à une consigne. Les originaux nominatifs du DP/ECF et les fichiers Packet Tracer ne sont pas publiés ; leurs thèmes sont référencés séparément. <span>Documentation publique ≠ document privé.</span></div><div class="notice"><strong>Validation technique :</strong> les commandes sont des exemples documentaires. Scripts PowerShell non exécutés sur Active Directory réel ; exemples Bash/PHP et environnements à tester selon la version. Les liens éditeurs peuvent changer.</div>
+<section class="work"><aside class="sidebar"><div class="aside-title">FILTRER PAR SOURCE</div><div id="filters" class="filters"><button class="selected" data-filter="tout">Tout afficher <span id="allcount"></span></button><button data-filter="cours">Cours · 176 pages</button><button data-filter="guides">Fiches installations</button><button data-filter="nouveau">DP, ECF & compléments</button><button data-filter="studi">Nouveaux cours Studi 2026</button><button data-filter="scripts">Scripts expliqués</button><button data-filter="exercices">Exercices, questions et scénarios</button><button data-filter="diagnostics">Diagnostics</button><button data-filter="commandes">Commandes / ports</button><button data-filter="compat">Versions et liens</button><button data-filter="pkt">Exercices Cisco (.pkt)</button></div><div class="aside-title topgap">SOMMAIRE DES EXERCICES</div><div class="side-links"><a href="exercices.html">↗ 77 exercices classés par compétence REAC</a></div><div class="aside-title topgap">RACCOURCIS</div><div class="side-links"><a href="support.pdf" target="_blank" rel="noopener">↗ Ouvrir le PDF de 176 pages</a><a href="archives.html">↗ Ancienne bibliothèque</a><a href="rapport-verification.html">↗ Vérifications et limites</a></div><div class="smallnote">Recherche sans compte, sans cookies de session et sans serveur de recherche. Les résultats sont préparés avant publication.</div></aside>
+<section class="results"><div class="resultbar"><div><span class="overline" id="subtitle">SOMMAIRE DOCUMENTAIRE PAR PERTINENCE</span><h2 id="resulttitle">Tous les documents</h2></div><span class="count" id="count"></span></div><div id="results" aria-live="polite"></div><button id="more" class="more" hidden>Afficher davantage de résultats</button></section></section></main>
+<div id="modal" class="modal" hidden role="dialog" aria-modal="true" aria-labelledby="mtitle"><div class="modalshade" id="shade"></div><section class="modalpanel"><div class="modaltop"><a href="bibliotheque.html" class="back" id="back">← Recherche</a><button id="close" class="close" aria-label="Fermer">✕</button></div><div id="detail"></div></section></div>
+<footer>Bibliothèque documentaire TSSR · Référentiel 2023 TP-01351 millésime 02 · Sources et limites indiquées dans les fiches. <br>Consultation sans authentification · Les scripts affichés ne sont pas exécutés.</footer>
+<script src="kb-data.js"></script><script src="enrichi-data.js"></script><script src="recherche-pertinence.js"></script><script src="studi2026-data.js"></script><script src="studi-rsync-complements.js"></script><script src="exercices-data.js"></script><script src="bibliotheque.js"></script></body></html>

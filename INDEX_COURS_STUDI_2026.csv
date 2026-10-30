@@ -1,0 +1,74 @@
+﻿ID;Titre précis;Cours Studi (référence seulement);Environnement;Nombre étapes;Mise en garde;État test
+"studi26-glpi-server-01;GLPI 10 — Vérifier Debian 12 avant installation;Synthèse personnelle du cours Studi « Installer et sécuriser un serveur GLPI 10 sur Debian 12 » (p. 6).;GLPI 10.x · Debian 12 · Apache · MariaDB · PHP 8.2;4;""Cette fiche correspond à GLPI 10.x et PHP 8.2 de Debian 12 ; ne pas utiliser la procédure Debian 13/PHP 8.4 sans vérifier la matrice GLPI."";Documenté / non testé en VM"
+studi26-glpi-server-02;GLPI 10 — Installer Apache
+studi26-glpi-server-03;GLPI 10 — Créer la base et le compte SQL dédié;Synthèse personnelle du cours Studi « Installer et sécuriser un serveur GLPI 10 sur Debian 12 » (p. 9).;GLPI 10.x · Debian 12 · Apache · MariaDB · PHP 8.2;6;Les lignes SQL se tapent dans MariaDB
+"studi26-glpi-server-04;GLPI 10 — Déployer le site dans Apache avec dossier public;Synthèse personnelle du cours Studi « Installer et sécuriser un serveur GLPI 10 sur Debian 12 » (p. 13).;GLPI 10.x · Debian 12 · Apache · MariaDB · PHP 8.2;6;""Ne pas copier un VirtualHost de GLPI 10 vers GLPI 11 sans vérifier la documentation de la branche ; le chemin /public dépend de l’arborescence installée."";Documenté / non testé en VM"
+"studi26-glpi-server-05;GLPI 10 — Terminer l’installation Web et supprimer les accès par défaut;Synthèse personnelle du cours Studi « Installer et sécuriser un serveur GLPI 10 sur Debian 12 » (p. 18).;GLPI 10.x · Debian 12 · Apache · MariaDB · PHP 8.2;6;""Les noms de menus et le chemin de suppression varient selon la version. Ne pas supprimer un fichier dont le rôle n’a pas été confirmé ; suivre l’alerte de sécurité exacte GLPI."";Documenté / non testé en VM"
+studi26-glpi-server-06;GLPI 10 — Diagnostiquer une page blanche ou erreur HTTP;Synthèse personnelle du cours Studi « Installer et sécuriser un serveur GLPI 10 sur Debian 12 » (p. 25).;GLPI 10.x · Debian 12 · Apache · MariaDB · PHP 8.2;6;Ne jamais appliquer chmod 777 pour « réparer » GLPI. Diagnostiquer avant de changer les permissions.;Documenté / non testé en VM
+studi26-glpi-inv-01;GLPI — Ajouter un ordinateur manuellement;Synthèse personnelle du cours Studi « Constituer l’inventaire matériel et logiciel du parc » (p. 6).;GLPI 10 · inventaire;5;;Documenté / non testé en VM
+studi26-glpi-inv-02;GLPI — Associer écran
+studi26-glpi-inv-03;GLPI — Enregistrer un logiciel
+studi26-glpi-inv-04;GLPI 10 — Activer l’inventaire natif;Synthèse personnelle du cours Studi « Constituer l’inventaire matériel et logiciel du parc » (p. 17).;GLPI 10 · inventaire;4;;Documenté / non testé en VM
+studi26-glpi-inv-05;GLPI Agent — Installer et lier un poste Windows ou Linux;Synthèse personnelle du cours Studi « Constituer l’inventaire matériel et logiciel du parc » (p. 18).;GLPI 10 · inventaire;5;Ne pas inventer de nom d’installateur ou de version : choisir la version officielle compatible avec le système d’exploitation. Pour GLPI Agent
+studi26-glpi-inv-06;GLPI — Corriger les doublons après inventaire;Synthèse personnelle du cours Studi « Constituer l’inventaire matériel et logiciel du parc » (p. 19).;GLPI 10 · inventaire;4;;Documenté / non testé en VM
+studi26-glpi-itil-01;GLPI — Créer un ticket d’incident et le qualifier;Synthèse personnelle du cours Studi « Exploiter le cycle de vie ITIL du ticket dans GLPI » (p. 4).;GLPI 10 · assistance;6;;Documenté / non testé en VM
+studi26-glpi-itil-02;GLPI — Déterminer impact
+studi26-glpi-itil-03;GLPI — Passer le ticket de Nouveau à Résolu puis Clos;Synthèse personnelle du cours Studi « Exploiter le cycle de vie ITIL du ticket dans GLPI » (p. 10).;GLPI 10 · assistance;5;;Documenté / non testé en VM
+studi26-glpi-itil-04;GLPI — Distinguer incident et demande de service;Synthèse personnelle du cours Studi « Exploiter le cycle de vie ITIL du ticket dans GLPI » (p. 16).;GLPI 10 · assistance;4;;Documenté / non testé en VM
+studi26-glpi-itil-05;GLPI — Documenter une résolution pour le jury;Synthèse personnelle du cours Studi « Exploiter le cycle de vie ITIL du ticket dans GLPI » (p. 13).;GLPI 10 · assistance;5;;Documenté / non testé en VM
+studi26-glpi-forms-01;GLPI — Créer des catégories de tickets simples;Synthèse personnelle du cours Studi « Adapter les champs et formulaires de ticket au besoin métier » (p. 4).;GLPI 10 · catégories · Formcreator;5;;Documenté / non testé en VM
+"studi26-glpi-forms-02;GLPI 10 — Vérifier le plugin Formcreator;Synthèse personnelle du cours Studi « Adapter les champs et formulaires de ticket au besoin métier » (p. 10).;GLPI 10 · catégories · Formcreator;4;""Studi mentionne 2.13.10 ; le projet publie également 2.13.11 pour GLPI 10.0.10+. Formcreator est en fin de vie et GLPI 11 intègre un système de formulaires natif."";Documenté / non testé en VM"
+"studi26-glpi-forms-03;GLPI 10 / Formcreator — Créer un formulaire de demande;Synthèse personnelle du cours Studi « Adapter les champs et formulaires de ticket au besoin métier » (p. 11).;GLPI 10 · catégories · Formcreator;6;""Cette procédure suppose GLPI 10 et le plugin Formcreator installé. Sous GLPI 11"
+studi26-glpi-forms-04;GLPI — Ajouter des champs utiles sans surcharger le ticket;Synthèse personnelle du cours Studi « Adapter les champs et formulaires de ticket au besoin métier » (p. 6).;GLPI 10 · catégories · Formcreator;4;;Documenté / non testé en VM
+studi26-glpi-stats-01;GLPI — Afficher les statistiques mensuelles des tickets;Synthèse personnelle du cours Studi « Piloter le centre de services avec les rapports GLPI » (p. 4).;GLPI 10 · statistiques;5;;Documenté / non testé en VM
+studi26-glpi-stats-02;GLPI — Comprendre temps de prise en charge
+studi26-glpi-stats-03;GLPI — Analyser des tickets en retard et les SLA;Synthèse personnelle du cours Studi « Piloter le centre de services avec les rapports GLPI » (p. 6).;GLPI 10 · statistiques;4;;Documenté / non testé en VM
+studi26-glpi-stats-04;GLPI — Rédiger un bilan de support en trois phrases;Synthèse personnelle du cours Studi « Piloter le centre de services avec les rapports GLPI » (p. 14).;GLPI 10 · statistiques;3;;Documenté / non testé en VM
+studi26-debian-01;Debian 13 — Préparer la VM serveur et choisir une ISO officielle;Synthèse personnelle du cours Studi « L’installation durcie d’un serveur Debian » (p. 5).;Debian 13 · serveur minimal · sécurité;4;;Documenté / non testé en VM
+studi26-debian-02;Debian 13 — Installer un système minimal sans interface graphique;Synthèse personnelle du cours Studi « L’installation durcie d’un serveur Debian » (p. 9).;Debian 13 · serveur minimal · sécurité;5;;Documenté / non testé en VM
+studi26-debian-03;Debian — Vérifier les comptes sudo et la mise à jour APT;Synthèse personnelle du cours Studi « L’installation durcie d’un serveur Debian » (p. 12).;Debian 13 · serveur minimal · sécurité;5;;Documenté / non testé en VM
+studi26-debian-04;Debian — Vérifier et limiter les services ouverts;Synthèse personnelle du cours Studi « L’installation durcie d’un serveur Debian » (p. 14).;Debian 13 · serveur minimal · sécurité;5;Ne jamais désactiver ssh ou le service réseau pendant une administration distante sans accès console de secours.;Documenté / non testé en VM
+studi26-debian-05;Debian — Autoriser SSH dans UFW avant d’activer le pare-feu;Synthèse personnelle du cours Studi « L’installation durcie d’un serveur Debian » (p. 15).;Debian 13 · serveur minimal · sécurité;6;Si SSH utilise un port différent de 22
+studi26-debian-06;Debian — Vérifier le niveau de sécurité avec Lynis;Synthèse personnelle du cours Studi « L’installation durcie d’un serveur Debian » (p. 17).;Debian 13 · serveur minimal · sécurité;4;;Documenté / non testé en VM
+studi26-lamp-01;LAMP Debian 13 — Installer Apache
+studi26-lamp-02;LAMP — Vérifier la page Apache et la racine du site;Synthèse personnelle du cours Studi « Le déploiement d’un serveur web LAMP » (p. 6).;Debian 13 · Apache 2.4 · MariaDB 11.8 · PHP 8.4;4;;Documenté / non testé en VM
+"studi26-lamp-03;LAMP — Vérifier PHP-FPM sans laisser de page phpinfo publique;Synthèse personnelle du cours Studi « Le déploiement d’un serveur web LAMP » (p. 10).;Debian 13 · Apache 2.4 · MariaDB 11.8 · PHP 8.4;5;""Ne pas laisser phpinfo() en ligne ; il expose la configuration du serveur. Le chemin est un exemple si DocumentRoot=/var/www/html."";Documenté / non testé en VM"
+studi26-lamp-04;LAMP — Sécuriser MariaDB et créer une base de TP;Synthèse personnelle du cours Studi « Le déploiement d’un serveur web LAMP » (p. 11).;Debian 13 · Apache 2.4 · MariaDB 11.8 · PHP 8.4;6;Les lignes CREATE/GRANT sont des commandes SQL à saisir à l’invite MariaDB. Elles ne fonctionnent pas en Bash sans client SQL.;Documenté / non testé en VM
+studi26-lamp-05;LAMP — Diagnostiquer Apache arrêté ou page HTTP 500;Synthèse personnelle du cours Studi « Le déploiement d’un serveur web LAMP » (p. 16).;Debian 13 · Apache 2.4 · MariaDB 11.8 · PHP 8.4;6;;Documenté / non testé en VM
+studi26-ssh-01;SSH Debian — Installer et tester OpenSSH Server;Synthèse personnelle du cours Studi « L’administration à distance sécurisée via SSH » (p. 5).;Debian 13 · OpenSSH;5;;Documenté / non testé en VM
+studi26-ssh-02;SSH — Créer une clé Ed25519 et la protéger;Synthèse personnelle du cours Studi « L’administration à distance sécurisée via SSH » (p. 9).;Debian 13 · OpenSSH;4;;Documenté / non testé en VM
+studi26-ssh-03;SSH — Copier sa clé publique sur Debian et tester la connexion;Synthèse personnelle du cours Studi « L’administration à distance sécurisée via SSH » (p. 11).;Debian 13 · OpenSSH;4;Ne pas désactiver PasswordAuthentication avant d’avoir validé une connexion par clé et un accès de secours.;Documenté / non testé en VM
+studi26-ssh-04;SSH Debian — Interdire root distant et l’authentification par mot de passe;Synthèse personnelle du cours Studi « L’administration à distance sécurisée via SSH » (p. 13).;Debian 13 · OpenSSH;6;Vérifier la configuration effective et les fichiers inclus. Si le poste ou l’énoncé exige encore un mot de passe
+studi26-ssh-05;SSH — Transférer un fichier avec SCP;Synthèse personnelle du cours Studi « L’administration à distance sécurisée via SSH » (p. 16).;Debian 13 · OpenSSH;3;;Documenté / non testé en VM
+studi26-ssh-06;SSH — Envoyer et récupérer des fichiers avec SFTP;Synthèse personnelle du cours Studi « L’administration à distance sécurisée via SSH » (p. 18).;Debian 13 · OpenSSH;5;;Documenté / non testé en VM
+studi26-backup-01;Sauvegardes — Distinguer totale
+studi26-backup-02;Rsync — Copier un dossier vers un emplacement de sauvegarde;Synthèse personnelle du cours Studi « La sauvegarde et la restauration avec Rsync et Cron » (p. 11).;Debian 13 · Rsync · Cron;4;Une simple copie rsync dans le même serveur n’est pas une sauvegarde complète contre perte du serveur. Prévoir une copie externe et vérifier les droits.;Documenté / non testé en VM
+"studi26-backup-03;Cron — Planifier une sauvegarde quotidienne à 22 h;Synthèse personnelle du cours Studi « La sauvegarde et la restauration avec Rsync et Cron » (p. 11).;Debian 13 · Rsync · Cron;4;""La rubrique est un exemple documentaire fixe ; le site ne calcule pas d’expression Cron ni ne génère un nouveau script. Utiliser les chemins absolus et vérifier les droits."";Documenté / non testé en VM"
+studi26-backup-04;Cron — Comprendre pourquoi une sauvegarde planifiée ne démarre pas;Synthèse personnelle du cours Studi « La sauvegarde et la restauration avec Rsync et Cron » (p. 13).;Debian 13 · Rsync · Cron;5;;Documenté / non testé en VM
+studi26-backup-05;Rsync — Restaurer une sauvegarde dans un dossier de test;Synthèse personnelle du cours Studi « La sauvegarde et la restauration avec Rsync et Cron » (p. 15).;Debian 13 · Rsync · Cron;5;Ne pas utiliser --delete sur une restauration tant que le dossier cible et les fichiers sont incertains. Ne pas confondre test dans /tmp avec une sauvegarde pérenne.;Documenté / non testé en VM
+studi26-backup-06;Sauvegardes — Rédiger une fiche de test de restauration;Synthèse personnelle du cours Studi « La sauvegarde et la restauration avec Rsync et Cron » (p. 17).;Debian 13 · Rsync · Cron;4;;Documenté / non testé en VM
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
+""
