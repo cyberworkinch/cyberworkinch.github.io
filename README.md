@@ -1,11 +1,9 @@
-# Répertoire technique
+# SITE 1 — Bibliothèque documentaire TSSR
 
-Site statique, sans compte de consultation, avec recherche locale dans un document PDF.
-
-Fichiers indispensables à publier **à la racine** du dépôt GitHub Pages : `index.html`, `style.css`, `app.js`, `index-data.js`, `support.pdf`, `robots.txt` et `.nojekyll`.
-
-La recherche s'effectue dans les 176 pages indexées lors de la préparation du site. Si le PDF est remplacé par une nouvelle version, l'index `index-data.js` doit aussi être régénéré pour rester synchronisé.
-
-L'accès au site est public. Le paramètre `noindex` et `robots.txt` ne garantissent ni confidentialité, ni anonymat, ni absence de référencement. Le dépôt source public peut être trouvé sur GitHub.
-
-Pour une consultation locale **si elle est autorisée**, tous les fichiers peuvent aussi être ouverts depuis un dossier ou une clé USB en ouvrant `index.html`, sans serveur et sans compte.
+- Publier dans le dépôt existant `cyberworkinch.github.io` si l'on souhaite remplacer l'accueil actuel tout en conservant les cours originaux.
+- Page principale : `index.html` conserve le moteur d'origine (176 pages). Nouveau moteur exhaustif dans `archives.html` ; ancien moteur aussi dans `cours.html`. PDF : `support.pdf`.
+- Recherche texte **passive** dans 176 pages, 76 fiches, 57 commandes, 76 ports usuels, 13 diagnostics, compatibilités et ressources officielles.
+- Aucune IA, aucun calculateur ni générateur de scripts/configurations. Les commandes affichées proviennent uniquement de documents archivés.
+- Utilisation sans compte ; dépôt public visible ; les moteurs de recherche peuvent ignorer robots.txt.
+- Attention aux droits d'auteur sur les supports de formation ; vérifier avant publication.
+- Déploiement `main` / `(root)` ; tous les fichiers à la racine du dépôt (pas de ZIP chargé comme fichier).

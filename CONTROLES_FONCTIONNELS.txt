@@ -1,0 +1,21 @@
+CONTRÔLES FONCTIONNELS — 30/10/2026
+
+REUSSIS
+• Archive ZIP CRC validée.
+• Syntaxe JavaScript vérifiée avec Node.js.
+• Index du moteur chargé dans un DOM simulé : 477 références.
+• Recherches testées : rechercher un utilisateur AD (31 références), sauvegarde bash (7), WDS install.wim (10), Wiki.js LDAP (3), GLPI imprimante (6), VLAN 2911 (2), cron (3), PHP pendu (2), VirtualBox OVA (4).
+• Ouverture d’une fiche via la simulation et construction de la fiche détaillée : OK.
+• 18 scripts conservés séparément, 332 lignes non vides expliquées.
+• 19 fiches d’approfondissement ajoutées.
+• Tests bash -n : 2 / 2 vérifications de syntaxe OK.
+• Tests php -l : 3 / 3 syntaxe PHP OK (attention : « 1<?php » produit une sortie parasite avant le code).
+• Contrôle de chaînes identifiantes les plus sensibles dans les ressources publiques : aucune occurrence repérée.
+
+LIMITES NON LEVÉES
+• Navigateur Chromium interactif inaccessible dans cet environnement de test ; pas de test visuel réel ni de validation sur l’ordinateur d’examen.
+• PowerShell ActiveDirectory et scénarios Packet Tracer non exécutés.
+• Les fichiers .pkt ont été catalogués par leurs noms, pas par leur configuration interne.
+• La documentation tiers et les URL peuvent évoluer ; recontrôler les liens nécessaires avant le jour J.
+• Les explications complémentaires des 76 anciennes fiches sont des notes de lecture guidées, pas une validation technique ligne à ligne.
+• Le fichier support.pdf contient 176 pages anonymisées ; vérifier les droits de publication des contenus.

@@ -1,0 +1,69 @@
+TSSR — SOMMAIRE DES APPROFONDISSEMENTS ET SCRIPTS
+
+
+SUPPORT / GLPI
+ • GLPI — Résoudre un problème d’imprimante (GLPI sur Debian 12)
+
+WINDOWS / AD
+ • Active Directory — Créer un compte et joindre un PC (Windows Server 2022 + Windows 10 Pro)
+ • ECF — Installer AD DS et DNS (Windows Server (ECF))
+ • PowerShell — Importer plusieurs utilisateurs AD depuis un CSV (Windows Server + module ActiveDirectory)
+
+LINUX
+ • Debian 12 — Créer utilisateur, groupe et droits (Debian 12)
+
+LINUX / WIKI.JS
+ • Wiki.js — Installer sur Debian 12 avec PostgreSQL (Debian 12 + Wiki.js 2.5.302+)
+ • Wiki.js — Authentification Active Directory via LDAP (Wiki.js 2 + AD)
+
+LINUX / SAUVEGARDE
+ • PostgreSQL — Sauvegarder Wiki.js avec cron (Debian 12 / PostgreSQL)
+
+LINUX / CRON
+ • Cron — Lire les 5 champs et quelques exemples fixes (Debian)
+
+RÉSEAUX / CISCO
+ • Cisco — 3 VLAN et routage inter-VLAN (Packet Tracer : 2960 + 2911)
+
+RÉSEAUX / IPV4
+ • IPv4 — Méthode de calcul sur papier (sans calculateur) (CIDR /0 à /32)
+
+VIRTUALISATION
+ • VirtualBox / VMware — Installer une VM depuis ISO ou OVA (VirtualBox 7 / VMware Workstation 17)
+ • Proxmox VE — Installer sur un serveur depuis ISO (Proxmox VE 9)
+ • ESXi — Installer l’hyperviseur depuis un média adapté (VMware ESXi / vSphere)
+ • Hyper-V — Créer une VM et choisir le réseau virtuel (Windows Server 2022/2025)
+
+SAUVEGARDE
+ • Sauvegarde 3-2-1 — Sauvegarder puis restaurer (Windows Server 2022)
+
+DÉPLOIEMENT / WDS
+ • WDS/PXE — Déployer Windows 10 depuis Windows Server (Windows Server 2022 + Windows 10)
+ • WDS — Comprendre install.esd, install.wim et boot.wim (Windows Server 2019/2022/2025)
+ • MDT — Pourquoi ne pas le choisir pour un nouveau déploiement (MDT retiré du support)
+
+SCRIPTS POWERSHELL
+ • Créer des utilisateurs AD depuis un CSV — 16 lignes expliquées
+ • Additionner ou soustraire deux nombres — if / elseif — 22 lignes expliquées
+ • Créer des utilisateurs AD depuis un CSV — variante 2 — 16 lignes expliquées
+ • Script — Creer un USER dans AD.txt — 20 lignes expliquées
+ • Rechercher un utilisateur AD — try, catch, finally — 12 lignes expliquées
+ • Vérifier un utilisateur AD — gestion des erreurs — 4 lignes expliquées
+ • Créer un utilisateur AD dans une OU — saisie manuelle — 20 lignes expliquées
+ • Créer des utilisateurs AD depuis un CSV — variante 3 — 16 lignes expliquées
+ • Créer des utilisateurs AD depuis un CSV dans les OU — 17 lignes expliquées
+ • Additionner ou soustraire deux nombres — if / elseif — variante 2 — 22 lignes expliquées
+ • Additionner ou soustraire deux nombres — switch — 24 lignes expliquées
+ • Créer un utilisateur AD dans une OU — saisie manuelle — variante 2 — 20 lignes expliquées
+ • Rechercher un utilisateur AD — try, catch, finally — variante 2 — 3 lignes expliquées
+
+SCRIPTS BASH
+ • Sauvegarder les dossiers utilisateurs Linux — archive tar.gz — 26 lignes expliquées
+ • Sauvegarder les dossiers utilisateurs Linux — copie des dossiers — 21 lignes expliquées
+
+SCRIPTS PHP
+ • PHP — Choisir un programme avec if — 13 lignes expliquées
+ • PHP — Croisement de deux suites — 18 lignes expliquées
+ • PHP — Jeu du pendu — 42 lignes expliquées
+
+Consulter bibliotheque.html pour ouvrir chaque fiche et lire toutes les explications.
