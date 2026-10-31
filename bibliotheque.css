@@ -15,3 +15,24 @@
 /* Les textes de la source restent inchangés ; nos ajouts sont visuellement séparés. */
 .personal-note { margin-top:8px; padding:10px 12px; border-left:4px solid #a96713; background:#fff2db; color:#5e3f15; border-radius:5px; font-size:13px; line-height:1.55; }
 .complement-note { margin-top:8px; padding:10px 12px; border:1px dashed #bb8b45; background:#fffaf0; color:#70501b; border-radius:6px; font-size:13px; line-height:1.55; }
+
+/* TWO-BLOCKS: only two main visible entry points, retaining the original ranking algorithm. */
+body.two-blocks{background:#f5f7fc}
+.two-blocks .top{justify-content:space-between}
+.two-blocks main{max-width:1120px;padding-top:28px}
+.two-blocks .hero{padding:38px clamp(22px,5vw,52px);border-radius:20px}
+.two-blocks .hero h1{font-size:clamp(30px,4.5vw,51px);margin:10px 0}
+.two-blocks .hero p{font-size:15px;margin:10px 0 23px}
+.two-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:22px 0 12px}
+.two-choices .choice{appearance:none;display:flex;flex-direction:column;gap:7px;align-items:flex-start;text-align:left;border:2px solid #dfe6f1;background:white;border-radius:18px;padding:26px 28px;min-height:210px;color:#132947;box-shadow:0 6px 20px #1c427009;transition:.15s ease;border-color:#d9e3f3}
+.two-choices .choice:hover,.two-choices .choice:focus-visible{border-color:#4876be;background:#f9fbff;transform:translateY(-1px)}
+.two-choices .choice.selected{border-color:#235aab;background:#edf4ff}
+.choice-kicker{font-size:11px;font-weight:900;letter-spacing:.12em;color:#4477ba}
+.choice-title{font-size:clamp(20px,2.3vw,27px);line-height:1.2;font-weight:850;letter-spacing:-.025em}
+.choice-desc{font-size:14px;color:#566b85;line-height:1.55;flex:1}
+.choice-action{font-size:13px;font-weight:850;color:#1e5ba9;margin-top:6px}
+.search-hint{color:#62758f;text-align:center;font-size:13px;padding:10px 4px 20px}
+.two-blocks .results{margin-top:14px;min-height:150px}
+.two-blocks .statbar{display:none}
+[hidden]{display:none!important}
+@media(max-width:680px){.two-choices{grid-template-columns:1fr;gap:12px}.two-choices .choice{min-height:0;padding:22px}.two-blocks main{padding:15px 12px 40px}.two-blocks .hero{padding:26px 18px}.two-blocks .results{padding:15px}}

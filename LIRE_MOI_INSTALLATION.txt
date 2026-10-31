@@ -1,0 +1,17 @@
+SITE TSSR — DEUX BLOCS UNIQUEMENT
+
+Visuel : Cours original — 176 pages / Approfondissements.
+Un seul moteur pour les deux blocs, résultats par pertinence conservés.
+La version corrigée du script « espace disque » se trouve dans le bloc 2, exercice n° 19.
+Aucune intelligence artificielle ni calculateur ni générateur automatique ajouté.
+
+INSTALLATION
+1. Faire une sauvegarde du dépôt GitHub actuel (Code > Download ZIP) sur ton ordinateur.
+2. Extraire cette archive.
+3. GitHub : dépôt cyberworkinch.github.io > Add file > Upload files.
+4. Glisser LES FICHIERS du dossier extrait, pas le ZIP entier. Valider les modifications.
+5. Ouvrir https://cyberworkinch.github.io dans une fenêtre InPrivate et tester les deux blocs.
+
+ATTENTION : envoyer de nouveaux fichiers ne supprime pas les anciens fichiers déjà en ligne.
+Les anciennes pages principales incluses ici redirigent vers la page à deux blocs, mais les autres anciens fichiers non remplacés restent dans l'historique du dépôt et éventuellement accessibles directement.
+Ne pas supprimer en masse des fichiers tant que le nouveau site n'a pas été testé.
