@@ -43,3 +43,17 @@ body.two-blocks{background:#f5f7fc}
 .two-choices .doc-full{display:block;border:2px solid #d9e3f3;border-top:1px solid #d9e3f3;border-radius:0 0 18px 18px;padding:14px 26px;color:#185ba5;font-weight:800;font-size:13px;text-decoration:none;background:#f6f9fe}
 .two-choices .doc-full:hover,.two-choices .doc-full:focus-visible{background:#e9f2ff;text-decoration:underline;outline:2px solid #679ddc;outline-offset:1px}
 @media(max-width:680px){.two-choices .choice-wrap .choice{min-height:0}.two-choices .doc-full{padding:13px 20px}}
+
+/* Navigation fiable : numéro physique dans chaque PDF et accès immédiat. */
+.page-badge{border-radius:7px;background:#e0f6ec;color:#066343;padding:4px 11px;font-size:12px;font-weight:900;letter-spacing:.045em}
+.page-result{text-decoration:none;color:inherit}
+.page-result:hover .page-action{text-decoration:underline}
+.page-action{margin-top:13px;color:#164b98;font-size:14px;font-weight:850}
+.page-guide{border:1px solid #c5d9ec;background:#eff7ff;color:#264d71;padding:12px 15px;border-radius:12px;margin-bottom:14px;font-size:13px}
+
+/* Sous-chapitre du bloc 1 : les deux blocs de premier niveau sont conservés. */
+.two-choices .subchapter-choice{display:block;appearance:none;border:2px solid #d9e3f3;border-top:1px solid #d9e3f3;background:#eaf5fb;color:#194d6c;text-align:left;font-weight:850;font-size:13px;line-height:1.5;padding:13px 22px;cursor:pointer}
+.two-choices .subchapter-choice:hover,.two-choices .subchapter-choice.selected{background:#cbe7fa;border-color:#4092bb}
+.two-choices .chapter-link{display:block;background:#f6f9fe;border:2px solid #d9e3f3;border-top:none;border-radius:0 0 18px 18px;padding:13px 22px;font-size:12.5px;font-weight:750;text-decoration:none;color:#185ba5}
+.two-choices .chapter-link:hover{text-decoration:underline;background:#e9f2ff}
+.two-choices .choice-wrap:first-child .doc-full{border-radius:0}

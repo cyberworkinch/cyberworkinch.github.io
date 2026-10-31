@@ -1,35 +1,6 @@
-AUDIT FINAL INTERNE — Deux blocs TSSR
-
-BLOC 1 : 176 pages (contenu technique d’origine préservé, noms et mots de passe personnels anonymisés).
-BLOC 2 : 216 pages (notes correctives locales ajoutées sans effacer les anciens paragraphes).
-
-OK — PDF: 176 pages originales dans le même ordre
-OK — PDF: 216 pages approfondissements
-OK — PDF: support.pdf = bloc 1 (octets)
-OK — Comparaison exhaustive des mots source sur 176 pages (hors anonymisation) — []
-OK — Absence noms personnels et deux secrets contrôlés dans PDF public
-OK — Présence des quatre identifiants GLPI par défaut
-OK — Présence des commentaires explicites des mots de passe personnels
-OK — Annotations techniques dans le cours
-OK — Aucun mot antérieur perdu du bloc 2, page par page — []
-OK — Cinq notes PDF près des erreurs de script
-OK — Sommaire PDF bloc 2 conservé — 399 entrées
-OK — Syntaxe de tous les JavaScript — 8 JS, 0 erreur(s)
-OK — Chaque fiche comporte un titre et des étapes non vides — 252 procédures
-OK — Ordre des pages et des lignes de scripts
-OK — Identifiants uniques par guide
-OK — Scripts sources gardés et erreurs corrigées dans notes
-OK — Pages du cours signalées avec notes
-OK — Lignes originales des 18 scripts préservées et dans le même ordre
-OK — Guides / références guides non altérés
-OK — Guides / références packets non altérés
-OK — Références HTML locales valides — 21 références, 0 manquantes
-OK — Accueil exactement deux blocs
-OK — Accueil relie les deux PDF
-OK — Absence anciens secrets/identifiants personnels dans fichiers web
-
-LIMITES HONNÊTES : les contrôles structurels, textuels et essais locaux ne prouvent PAS que toutes les procédures seront exécutables dans toutes les VM/configurations. Tests Windows AD, hyperviseurs, Cisco Packet Tracer, publication GitHub non effectués.
-
-La version du site est une référence de révision : respecter les prérequis et la version exacte de l’énoncé.
-Rappel : changer les identifiants GLPI par défaut après la première connexion.
-Ne jamais partager de secret réel dans un dépôt public.
+RÉVISION TSSR — ORGANISATION ET NEUTRALISATION
+Bloc 1 : 262 pages ; 176 premières pages d’origine conservées.
+Chapitre 3 : Série A p.177–200 ; Série B p.201–258 ; aide-mémoire AD p.259–262.
+Bloc 2 : 216 pages ; procédures techniques conservées dans le même ordre, seules les désignations de provenance rendues neutres.
+Index : 478 pages avec liens PDF directs. Les comptes de laboratoire sont fictifs ; les secrets personnels restent masqués.
+Vérifier les paramètres de chaque environnement avant usage.
