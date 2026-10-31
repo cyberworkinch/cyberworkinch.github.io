@@ -1,8 +1,0 @@
-Edition : 30/10/2026. REAC TSSR 2023 TP-01351 millésime 02.
-Sources communes : 176 pages du PDF de révision fourni ; 76 fiches ; 57 commandes ; 76 ports usuels ; 13 diagnostics ; 21 liens de téléchargement.
-Historique, dépôt et accès : site PUBLIC. Pas de connexion pour consulter, mais accès potentiellement journalisable par le réseau de l'examen.
-Référentiel officiel : https://certifpro.francecompetences.fr/api/fiches/refActivity/24216/465511
-Audit des liens : AUDIT_LIENS.csv — 77 URL uniques ; 21 URL de référence contrôlées partiellement sur le Web, 56 autres non vérifiées individuellement.
-ATTENTION : un lien de téléchargement vérifié ne garantit pas ISO disponible, droits/licence, absence d'authentification, checksum ni compatibilité totale.
-Vérifications pratiques : test sans authentification, liens nécessaires, droits de publication, versions OS, images, interfaces matérielles, prérequis.
-Sécurité : ne pas utiliser de scripts ni commandes modificatrices sans valider cible et contexte.

@@ -1,6 +1,0 @@
-﻿Sujet,Documentation consultée,Constat vérifié,Limite
-WDS Windows 11,https://learn.microsoft.com/fr-fr/windows/deployment/wds-boot-support,boot.wim de média Windows 11 non pris en charge en mode WDS classique,Les scénarios PXE avec image personnalisée sont distincts
-MDT,https://learn.microsoft.com/fr-fr/troubleshoot/mem/configmgr/mdt/mdt-retirement,MDT retiré du support depuis janvier 2026,Ne pas conseiller en nouvelle installation
-FreePBX 17,https://www.freepbx.org/downloads/,Éditeur : installation FreePBX 17 via Debian 12 ou ISO v17,Ubuntu / Debian 13 non officiellement pris en charge selon documentation éditeur
-Active Directory,https://learn.microsoft.com/fr-fr/windows-server/identity/ad-ds/deploy/install-active-directory-domain-services--level-100-,Serveurs 2019/2022/2025 documentés,Droits et disponibilité des rôles à vérifier
-Autres guides / liens,AUDIT_LIENS.csv,Références reprises du site précédent,Non tous revalidés; pas de garantie installation complète
