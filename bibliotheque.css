@@ -36,3 +36,10 @@ body.two-blocks{background:#f5f7fc}
 .two-blocks .statbar{display:none}
 [hidden]{display:none!important}
 @media(max-width:680px){.two-choices{grid-template-columns:1fr;gap:12px}.two-choices .choice{min-height:0;padding:22px}.two-blocks main{padding:15px 12px 40px}.two-blocks .hero{padding:26px 18px}.two-blocks .results{padding:15px}}
+
+/* Accès direct aux deux documents complets ; recherche par pertinence inchangée. */
+.two-choices .choice-wrap{display:flex;flex-direction:column;min-width:0;background:#fff;border-radius:18px;box-shadow:0 6px 20px #1c427009}
+.two-choices .choice-wrap .choice{width:100%;flex:1;min-height:176px;border-radius:18px 18px 0 0;border-bottom:0;box-shadow:none}
+.two-choices .doc-full{display:block;border:2px solid #d9e3f3;border-top:1px solid #d9e3f3;border-radius:0 0 18px 18px;padding:14px 26px;color:#185ba5;font-weight:800;font-size:13px;text-decoration:none;background:#f6f9fe}
+.two-choices .doc-full:hover,.two-choices .doc-full:focus-visible{background:#e9f2ff;text-decoration:underline;outline:2px solid #679ddc;outline-offset:1px}
+@media(max-width:680px){.two-choices .choice-wrap .choice{min-height:0}.two-choices .doc-full{padding:13px 20px}}

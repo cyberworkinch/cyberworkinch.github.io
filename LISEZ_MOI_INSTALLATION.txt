@@ -1,0 +1,13 @@
+TSSR - PUBLICATION VERSION AUDITEE
+
+1. EXTRAIRE l'archive ZIP sur le PC.
+2. Se connecter a GitHub chez soi avec le compte proprietaire du depot.
+3. Ouvrir https://github.com/cyberworkinch/cyberworkinch.github.io/upload/main
+4. Importer les fichiers contenus dans le dossier extrait, pas le ZIP.
+5. Valider avec Commit changes, sur la branche main.
+6. Ouvrir https://cyberworkinch.github.io puis Ctrl+F5.
+7. Verifier 2 blocs, 2 PDF (176 + 216 pages), recherches et acces sans compte.
+
+Aucune suppression automatique des anciens fichiers du depot n'est realisee.
+Les notes techniques hors cours sont signalees.
+Les scripts n'ont pas tous ete executes sur de vraies VMs/Packet Tracer.
