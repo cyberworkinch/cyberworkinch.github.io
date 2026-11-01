@@ -3,3 +3,6 @@
 mark.hl{background:#ffef6d;color:#14202b;border-radius:3px;padding:1px 1px;font-weight:800;box-shadow:0 0 0 1px #e4c94055}.res-title mark.hl{background:#ffe284}.origin-note{margin-left:auto;color:#667085;font-size:12px;font-weight:600}.add-note{font-size:12px;color:#0c6b54;font-weight:700}.res:focus-visible{outline:3px solid #0a6eb9;outline-offset:3px}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
 
 mark.hl-near{background:#d2eafe;color:#123b63;border-radius:3px;padding:1px 1px;font-weight:750}
+
+/* Résultats : lignes réellement extraites du PDF, mots-clés immédiatement repérables. */
+.hit-lines{margin-top:9px;display:grid;gap:6px}.hit-line{font-size:14px;color:#314663;background:#f5f9ff;border-left:3px solid #bfd5f6;padding:7px 10px;overflow-wrap:anywhere;line-height:1.6}.res-title{font-weight:850}.origin-note{margin:8px 0 0;color:#495e79;font-size:12px;font-weight:700}.res mark.hl{background:#ffe24f;color:#101820;outline:2px solid #ffc526;outline-offset:0;border-radius:2px;font-weight:900}.res mark.hl-near{background:#c7e4ff;color:#053668;border-radius:2px;font-weight:850}.res-action{display:inline-block;padding:4px 0}.res:hover .res-action{text-decoration:underline}.res:focus-visible{outline:3px solid #1765bd;outline-offset:3px}@media(max-width:650px){.hit-line{font-size:13.5px}}
