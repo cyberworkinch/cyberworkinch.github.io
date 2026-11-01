@@ -11,3 +11,24 @@ mark.hl-near{background:#d2eafe;color:#123b63;border-radius:3px;padding:1px 1px;
 
 /* Avoid horizontal overflow on phones, even for long copied commands or paths. */
 .results{grid-template-columns:minmax(0,1fr)}.res{min-width:0;max-width:100%;overflow-wrap:anywhere;white-space:normal}.res-title,.hit-lines,.hit-line{min-width:0;max-width:100%;overflow-wrap:anywhere}.line-text{min-width:0;overflow-wrap:anywhere}
+
+/* Lecteur modal, ferme par Retour/Echap/flèche arrière. Aucune navigation hors du site à la lecture. */
+#reader-dialog{inset:0;position:fixed;width:min(1070px,96vw);height:min(94vh,1250px);max-width:none;max-height:none;border:2px solid #b4cff1;border-radius:15px;padding:0;overflow:hidden;box-shadow:0 10px 45px #19324b70;background:#fff;color:#10213b}
+#reader-dialog::backdrop{background:#112a4c9c;backdrop-filter:blur(2px)}
+.reader-toolbar{position:sticky;top:0;z-index:2;display:flex;gap:12px;justify-content:space-between;align-items:center;background:#0b4f9e;color:white;border-bottom:2px solid #b7d5ff;padding:12px 18px;min-height:80px}
+.reader-toolbar h2{font-size:clamp(16px,2vw,22px);margin:0;color:white}.reader-tag{font-size:11px;letter-spacing:.1em;color:#d1e7ff;font-weight:800}
+#reader-close{cursor:pointer;flex-shrink:0;border:2px solid white;background:#fff;color:#063b7c;font-size:14px;font-weight:900;border-radius:8px;padding:12px 14px}
+.reader-content{height:calc(100% - 80px);overflow:auto;padding:17px 22px 30px;scrollbar-gutter:stable}
+.reader-hint{font-size:13px;color:#3e536d;margin:8px 0 14px}
+.reader-target{background:#fff8cf;border:2px solid #f1c84a;border-radius:12px;padding:12px 16px;margin:12px 0;box-shadow:0 2px 12px #edcc5325}
+.reader-where{color:#665023;font-weight:850;font-size:13px;margin-bottom:5px}
+#reader-focus{font-size:17px;font-weight:850;overflow-wrap:anywhere;white-space:pre-wrap}
+#reader-focus mark.hl,.page-lines mark.hl{background:#ffe037;outline:1px solid #d49700;color:#0d1828;font-weight:900}
+#reader-page-lines{max-height:min(53vh,600px);scrollbar-gutter:stable}
+#reader-page-lines .passage-focus{background:#ffeec4;outline:2px solid #3c87e9;scroll-margin:80px}
+.reader-actions{display:flex;flex-wrap:wrap;gap:9px;position:sticky;bottom:0;z-index:1;background:#fff;padding:14px 0 8px;border-top:1px solid #d9e4f4}
+.reader-actions button{cursor:pointer;border-radius:8px;background:#0c4e9f;color:#fff;border:1px solid #0c4e9f;font-weight:850;padding:10px 13px}
+.reader-actions #reader-return{background:#eaf1fc;color:#06418c;border-color:#a5c6ee}
+.pdf-tip{margin:7px 0;background:#fff3cf;border-left:4px solid #efb845;padding:12px;font-weight:700;font-size:13px}
+#reader-pdfzone{scroll-margin-top:100px}
+@media(max-width:650px){#reader-dialog{width:99vw;height:97vh;border-radius:7px}.reader-toolbar{padding:10px;min-height:90px;align-items:start}#reader-close{padding:9px;font-size:12px;max-width:48%}.reader-content{height:calc(100% - 90px);padding:11px}.reader-target{padding:9px}#reader-focus{font-size:15px}.reader-actions{position:static}.reader-actions button{font-size:12px}.pdf-frame{height:500px}}
