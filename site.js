@@ -1,5 +1,5 @@
 (()=>{'use strict';
-const BUILD='tssr-r6-exact-20261101';
+const BUILD='tssr-pagination-unique-20261101-v9';
 const PAGES=window.TSSR_PHYSICAL_PAGES || [];
 const FILE=window.TSSR_PDF_FILES || {};
 const HASH=window.TSSR_PDF_DIGESTS || {};
@@ -53,8 +53,7 @@ function clearError(){$('#notice').hidden=true;$('#notice').textContent='';}
 function displaySearch(){const out=$('#results');out.replaceChildren();const subset=pages.slice(0,limit);
 for(const it of subset){const pg=it.pg;const matched=bestLines(pg,gg,query),head=headingLine(pg,gg,query);
  const card=el('button',undefined,'res');card.type='button';card.dataset.block=String(pg.block);card.dataset.page=String(pg.page);
- const badges=el('div',undefined,'badges');badges.append(el('span','BLOC '+pg.block,'block-pill'),el('span','PAGE PDF '+pg.page+' / '+TOTAL[pg.block],'page-pill'));
- if(pg.printed!==null&&pg.printed!==pg.page)badges.append(el('span','Page imprimée '+pg.printed,'printed-pill'));
+ const badges=el('div',undefined,'badges');badges.append(el('span','BLOC '+pg.block,'block-pill'),el('span','PAGE '+pg.page+' / '+TOTAL[pg.block],'page-pill'));
  card.append(badges);
  const title=el('div',undefined,'res-title');hilite(title,head.text,gg);card.append(title);
  const snippetRow=el('div',undefined,'hit-lines');const chosen=[head,...matched.filter(x=>x.line!==head.line)].slice(0,4).sort((a,b)=>a.line-b.line);
@@ -70,7 +69,7 @@ if(!pages.length&&query)out.append(el('p','Aucun passage trouvé. Essaie moins d
 function showPage(pg,focusLine){active=pg;
  const view=$('#viewer');view.hidden=false;$('#pdfzone').hidden=true;$('#pdfzone').replaceChildren();
  $('#viewer-title').textContent='Bloc '+pg.block+' — page PDF '+pg.page+' / '+TOTAL[pg.block];
- $('#viewer-print').textContent=pg.printed===null?'':('Numéro inscrit dans l’ancien cours : '+pg.printed+'. Il ne correspond pas forcément au numéro de page PDF.');
+ $('#viewer-print').textContent='Page '+pg.page+' du bloc '+pg.block+' : même numéro dans le PDF, le sommaire et la recherche.';
  const all=$('#page-lines');all.replaceChildren();const lines=pg.text.split(/\r?\n/);let target=null;
  for(let i=0;i<lines.length;i++){const raw=lines[i],row=el('div',undefined,'page-line');row.dataset.line=String(i+1);if(!raw.trim())row.classList.add('blank');
   const lab=el('span',String(i+1),'line-num');row.append(lab);const body=el('span',undefined,'line-text');hilite(body,raw,gg);row.append(body);all.append(row);
