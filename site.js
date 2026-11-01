@@ -1,12 +1,13 @@
 (()=>{'use strict';
 const DB=window.TSSR_PHYSICAL_PAGES||[];
-const TOTAL={1:262,2:216};
+const TOTAL={1:270,2:248};
 const FILE={1:'support.pdf',2:'TSSR_BLOC_2_APPROFONDISSEMENTS_COMPLETS.pdf'};
 const $=(s)=>document.querySelector(s);
 const fold=(s)=>String(s??'').normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/œ/g,'oe').replace(/æ/g,'ae');
 const words=(s)=>fold(s).match(/[a-z0-9]+/g)||[];
 const noise=new Set(['le','la','les','des','une','un','aux','avec','dans','par','pour','sur','de','du','et','ou','en','au','a','l','d','comment','je','tu','on','suis','veut','voudrais','faire','que','quel','quelle','quels','laquelle','page','bloc']);
 const eq={
+  creation:['creer','installer','installation','configurer','mise en place','deployer'],
   creer:['creer','creation','configurer','installation','installer','mise en place','deployer'],
   installe:['installer','installation','deployer','creation','mettre en place'],
   installer:['installation','installer','deployer','mise en place','configurer','creer'],
@@ -38,6 +39,15 @@ function groups(q){const unique=new Set();const out=[];for(let w of words(q)){
  if(unique.has(base))continue;unique.add(base);
  out.push({base,expanded:[base,...(eq[base]||[])]});
 }return out.slice(0,14)}
+function indexOfTerm(haystack,term){
+ const t=fold(term);let pos=0;
+ while((pos=haystack.indexOf(t,pos))>=0){
+   const bef=pos>0?haystack[pos-1]:'';
+   const aft=pos+t.length<haystack.length?haystack[pos+t.length]:'';
+   if(t.length<=3 && (/[a-z0-9]/.test(bef) || /[a-z0-9]/.test(aft))) {pos++;continue;}
+   return pos;
+ }return -1;
+}
 function distinctMatch(text,alts){const t=fold(text);return alts.find(x=>t.includes(x))||null}
 function headingTitle(pg,gg){const scored=(pg.titles||[]).map(h=>{
  const htext=fold(h.title);let score=0;
@@ -54,7 +64,7 @@ function evaluate(pg,gg,raw){
  let coverage=0,score=0,loc=[];
  for(const g of gg){let best=null,bestWeight=0,bestPos=1e9;
   if(g.base==='lamp' && !content.includes('lamp') && ['apache','mariadb','php'].filter(k=>content.includes(k)).length<2)continue;
-  for(const alt of g.expanded){const pos=content.indexOf(alt);
+  for(const alt of g.expanded){const pos=indexOfTerm(content,alt);
    if(pos>=0){const weight=(alt===g.base?6:3.5)+Math.min(4,alt.length/5);if(weight>bestWeight){bestWeight=weight;bestPos=pos;best=alt;}}
   }
   if(best){coverage++;score+=bestWeight;loc.push({pos:bestPos,term:best});}
@@ -65,7 +75,7 @@ function evaluate(pg,gg,raw){
  const required=gg.length===1?1:gg.length===2?2:Math.ceil(gg.length*.6);
  if(coverage<required)return null;
  score+=coverage*14+coverage/gg.length*20;
- if(content.includes(fold(raw)))score+=52;
+ const literal=fold(raw);if(literal && content.includes(literal)){const count=content.split(literal).length-1;score+=55+50*Math.min(5,count);}
  // A subject-rich technical procedure is preferred to a table of contents for ordinary queries.
  if(!/sommaire|chapitre|index|plan/.test(fold(raw)) && ((pg.block===1 && [1,2,177,201,259].includes(pg.page)) || (pg.block===2 && pg.page===1)))score-=35;
  if(gg.some(g=>g.base==='lamp') && ['apache','mariadb','php'].every(k=>content.includes(k)))score+=10;
@@ -74,7 +84,7 @@ function evaluate(pg,gg,raw){
  const anchor=loc.reduce((a,b)=>a.pos<=b.pos?a:b).pos;
  return{score,anchor,match:loc};
 }
-function excerpt(pg,e){let raw=pg.text.replace(/\s+/g,' '),canon=fold(raw);let needle=e.match.reduce((a,b)=>a.pos<=b.pos?a:b).term;let offset=canon.indexOf(needle);
+function excerpt(pg,e){let raw=pg.text.replace(/\s+/g,' '),canon=fold(raw);let query=fold($('#query').value.trim());let match=e.match.slice().sort((a,b)=>b.term.length-a.term.length);let needle=match.length?match[0].term:'';let offset=query?canon.indexOf(query):-1;if(offset<0)offset=indexOfTerm(canon,needle);
  if(offset<0)offset=0;
  let start=Math.max(0,offset-92),end=Math.min(raw.length,offset+235);
  if(start>0){let i=raw.indexOf(' ',start);if(i>0&&i<start+30)start=i+1;}
@@ -82,6 +92,26 @@ function excerpt(pg,e){let raw=pg.text.replace(/\s+/g,' '),canon=fold(raw);let n
  return (start?'…':'')+raw.slice(start,end).trim()+(end<raw.length?'…':'');
 }
 const make=(tag,text,cls)=>{let x=document.createElement(tag);if(text!==undefined)x.textContent=text;if(cls)x.className=cls;return x};
+/* Accent-insensitive match ranges are mapped back to the original text; every mark is a safe text node. */
+function foldedPositionMap(text){let val='',map=[],idx=0;for(const char of text){const seq=fold(char);for(const c of seq){val+=c;map.push(idx);}idx+=char.length;}map.push(idx);return {val,map};}
+function highlight(node,txt,query){
+  const gs=groups(query),dict=new Map();
+  for(const g of gs){for(const term of g.expanded){const t=fold(term).trim();if(t.length>=2)dict.set(t,t===g.base?'hl':'hl-near');}}
+  const {val,map}=foldedPositionMap(txt),ranges=[];
+  for(const [term,cls] of [...dict.entries()].sort((a,b)=>b[0].length-a[0].length)){
+    let start=0,found=0;while((found=val.indexOf(term,start))!==-1){
+      const a=map[found],b=map[found+term.length]??txt.length;
+      const bef=found>0?val[found-1]:''; const aft=found+term.length<val.length?val[found+term.length]:'';
+      if(b>a && !(term.length<=3 && (/[a-z0-9]/.test(bef) || /[a-z0-9]/.test(aft))))ranges.push([a,b,cls]);start=found+Math.max(1,term.length);if(ranges.length>250)break;
+    }
+  }
+  ranges.sort((a,b)=>a[0]-b[0]||(a[2]==='hl'?-1:1)||(b[1]-a[1]));
+  let last=0;for(const [a,b,cls] of ranges){if(a<last)continue;
+    if(a>last)node.append(document.createTextNode(txt.slice(last,a)));
+    node.append(make('mark',txt.slice(a,b),cls));last=b;
+  }node.append(document.createTextNode(txt.slice(last)));
+}
+
 let mode='all',limit=30,entries=[];
 function setMode(next){mode=next;limit=30;
  for(let b of document.querySelectorAll('.mode')){let sel=b.dataset.mode===mode;b.classList.toggle('active',sel);b.setAttribute('aria-pressed',String(sel));}
@@ -92,8 +122,10 @@ for(const b of document.querySelectorAll('.card-search'))b.addEventListener('cli
 function render(){let container=$('#results');container.replaceChildren();for(const {pg,e:ev} of entries.slice(0,limit)){
  const a=make('a',undefined,'res');a.href=FILE[pg.block]+'#page='+pg.page;a.target='_blank';a.rel='noopener noreferrer';
  const labels=make('div',undefined,'badges');labels.append(make('span','BLOC '+pg.block,'block-pill'),make('span','PAGE '+pg.page+' / '+TOTAL[pg.block],'page-pill'));a.append(labels);
- a.append(make('div',headingTitle(pg,groups($('#query').value)),'res-title'));
- a.append(make('div',excerpt(pg,ev),'excerpt'));
+ const title=make('div',undefined,'res-title');highlight(title,headingTitle(pg,groups($('#query').value)),$('#query').value);a.append(title);
+ const snippet=make('div',undefined,'excerpt');highlight(snippet,excerpt(pg,ev),$('#query').value);a.append(snippet);
+ if(pg.isSupplement)a.append(make('div','AJOUT IA — hors cours original — chapitre associé à la page source '+pg.sourcePage,'add-note'));
+ else if(pg.sourcePage!==pg.page)a.append(make('div','Page du cours original : '+pg.sourcePage,'origin-note'));
  a.append(make('div','↗ Ouvrir le bloc '+pg.block+' à la page '+pg.page,'res-action'));
  container.append(a);
  }
